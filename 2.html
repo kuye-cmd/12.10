@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <svg style="width: 0;height:0px;">
+        <symbol class="love" id="love1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 48 48">
+            <path fill="black" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M24.136 9.1c3.31-3.409 5.46-3.6 7.525-3.6c5.815 0 10.478 6.055 10.394 11.612c-.131 8.693-5.281 16.117-17.932 25.388C12.748 34.747 6.137 24.862 5.947 17.599C5.808 12.318 10.823 5.5 16.665 5.5c2.256 0 4.125.148 7.471 3.6"/>
+        </symbol>
+        <symbol class="love" id="love2" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 48 48">
+            <path fill="red" stroke="red" stroke-linecap="round" stroke-linejoin="round" d="M24.136 9.1c3.31-3.409 5.46-3.6 7.525-3.6c5.815 0 10.478 6.055 10.394 11.612c-.131 8.693-5.281 16.117-17.932 25.388C12.748 34.747 6.137 24.862 5.947 17.599C5.808 12.318 10.823 5.5 16.665 5.5c2.256 0 4.125.148 7.471 3.6"/>
+        </symbol>
+    </svg>
+    <svg>
+        <use xlink:href="#love1"></use>
+    </svg>
+    <svg>
+        <use href="#love1"></use>
+    </svg>
+    <svg>
+        <use href="#love1"></use>
+    </svg>
+    <svg>
+        <use href="#love1"></use>
+    </svg>
+    <svg>
+        <use href="#love1"></use>
+    </svg>
+    
+    <h2 style="margin-left: 250px;"></h2>
+</body>
+<script>
+    var user = document.querySelectorAll('use');
+    for (let i = 0; i < user.length; i++) {
+        user[i].addEventListener('click',function(e){
+            if (i===0) {
+                document.querySelector('h2').innerText="差";
+            } else if(i===1){
+                document.querySelector('h2').innerText="中差"
+            } else if(i===2){
+                document.querySelector('h2').innerText="中"
+            } else if(i===3){
+                document.querySelector('h2').innerText="良好"
+            } else{
+                document.querySelector('h2').innerText="好"
+            }
+            for (let j = 0; j < user.length; j++) {
+                if(j<=i){
+                    user[j].href.baseVal="#love2";
+                    user[j].href.animVal="#love2";
+                }else{
+                    user[j].href.baseVal="#love1";
+                    user[j].href.animVal="#love1";
+                }
+            }
+        })
+    }
+    
+</script>
+</html>

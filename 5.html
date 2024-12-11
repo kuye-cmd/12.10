@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            /* display: block; */
+            width: 500px;
+            height: 80px;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+        }
+        input:nth-child(1){
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="用户/邮箱/手机号">
+    <input type="password" value="12345798">
+    <span>眼睛</span>
+</body>
+<script>
+    // let bu1 = document.querySelector('button:nth-child(1)')
+    let bu2 = document.querySelector('input:nth-child(2)')
+    // console.log(bu2);
+    
+    let span =document.querySelector('span')
+    span.addEventListener('click',function(e){
+        var bu2 = document.querySelector('input:nth-child(2)')
+        bu2.type="text"
+    })
+</script>
+</html>

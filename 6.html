@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <img src="./cheng_boy.png" class="a" alt="" style="width: 600px;">
+    <div>
+        <img src="./cheng_boy.png" alt="">
+        <img src="./cheng_girl.png" alt="">
+        <img src="./ci_boy.png" alt="">
+    </div>
+</body>
+<script>
+    var img=document.querySelectorAll('div>img');
+    console.log(img);
+    
+    for (let i = 0; i < img.length; i++) {
+        img[i].addEventListener('click',function(e){
+            var imgd=document.querySelector('.a');
+            imgd.src=img[i].src;
+        })
+    }
+</script>
+</html>

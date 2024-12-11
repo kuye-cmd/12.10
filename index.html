@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr:nth-child(1){
+            background-color: rgb(205, 205, 205);
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table tr td{
+            width: 100px;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        table tr td:nth-child(4){
+            color: blue;
+            cursor: pointer;
+        }
+        a{
+            display: block;
+            font-size: 35px;
+            color: tomato;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table collapse border="1px">
+        <tr>
+            <th>姓名</th>
+            <th>科目</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>梁战奇</td>
+            <td>js</td>
+            <td>100</td>
+            <td>删除</td>
+        </tr>
+        <tr>
+            <td>abc</td>
+            <td>abc</td>
+            <td>abc</td>
+            <td>删除</td>
+        </tr>
+        <tr>
+            <td>b</td>
+            <td>b</td>
+            <td>b</td>
+            <td>删除</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>c</td>
+            <td>c</td>
+            <td>删除</td>
+        </tr>
+    </table>
+
+
+    <a href="./2.html"></a>
+    <a href="./3.html"></a>
+    <a href="./4.html"></a>
+    <a href="./5.html"></a>
+</body>
+<script>
+    var sc=document.querySelectorAll("table tr td:nth-child(4)");
+    console.log(sc);
+    for (let i = 0; i < sc.length; i++) {
+        sc[i].addEventListener('click',function(e){
+            sc[i].parentNode.style="display:none;"
+        })
+    }
+
+
+
+    // var dataSource =[
+    //     {id:1, name:'a1' , subject:'b1', score:'100'},
+    //     {id:1, name:'a2' , subject:'b2', score:'200'},
+    //     {id:1, name:'a3' , subject:'b3', score:'300'},
+    // ];
+    // var tbody =document.querySelector('tbody');
+    // var keys = ['name','subject','score','action']
+    // for (let i = 0; i < array.length; i++) {
+    //     var tr =document.createElement('tr');
+    //     for (let j = 0; j < keys.length; j++) {
+    //         var td =document.createElement('td');
+    //         var proName = keys[j];
+    //         var innerMessage = dataSource[i][propNanme];
+    //         td.innerText = innnerMessage ? innerMessage:'<button>';
+    //     }
+    // }
+</script>
+</html>
